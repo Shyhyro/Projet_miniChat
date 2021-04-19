@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    position: fixed;
+    align-items: center;
+}
+
+/* Colors & fonts */
+body, #login_button_div button, #username_password_div input {
+    color: gray;
+}
+
+body, #login_button_div button, #username_password_div input, #chat_new_message_leave button {
+    font-family: "Courier New", sans-serif;
+}
+
+h2 {
+    font-weight: lighter;
+    letter-spacing: 5px;
+    font-size: 2rem;
+}
+
+#username_password_div input, #login_button_div button, #chat_new_message_leave button {
+    box-shadow: lightgray 2px 2px 5px;
+    border-radius: 50px;
+}
+
+/* Width & Height */
+body, #welcome_div, #username_password_div input, #login_button_div, #chat_body, #chat_message_list, #chat_new_message_leave {
+    width: 100%;
+}
+
+body, #chat_body {
+    height: 100%;
+}
+
+#login_div, #welcome_div {
+    height: auto;
+}
+
+/* Flex */
+body, .message_info_div, .message_username, #chat_new_message_leave {
+    display: flex;
+}
+
+body, .message_username {
+    justify-content: center;
+}
+
+/* Unset & reset */
+#username_password_div input, #login_button_div button, #chat_new_message_div input, #chat_new_message_leave button {
+    border: none;
+}
+
+#login_button_div button, #chat_new_message_leave button {
+    background-color: unset;
+    padding: 0.5rem 0.5rem;
+}
+
+/* Others */
+#login_div {
+    padding: 1.5rem 2.5rem;
+    font-size: 1rem;
+    width: 23%;
+    box-shadow: lightgray 0 0 40px;
+    border-radius: 50px;
+}
+
+#welcome_div {
+    text-align: center;
+}
+
+#username_password_div {
+    padding: 3rem 0;
+}
+
+#username_password_div input {
+    padding: 1rem 0.5rem;
+}
+
+#username_password_div input:first-child{
+    margin-bottom: 3rem;
+}
+
+#login_button_div {
+    text-align: right;
+}
+
+#chat_message_list {
+    height: 90%;
+}
+
+#chat_body {
+    padding: 2rem 1rem;
+}
+
+.message_info_div {
+    margin-bottom: 1rem;
+}
+
+.message_username {
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+
+.message_username, #chat_leave_div {
+    width: 15%;
+}
+
+.message_date_div, #chat_new_message_div, #chat_new_message_div input {
+    width: 85%;
+}
+
+.message_div, #chat_new_message_div input {
+    box-shadow: lightgray 0 2px 5px;
+}
+
+.message_div, #chat_new_message_div input {
+    padding: 1rem 2rem;
+}
+
+#chat_new_message_leave {
+    height: 10%;
+}
+
+#chat_leave_div button{
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+
+/* Hover */
+#login_button_div button:hover, #chat_new_message_leave button:hover {
+    background-color: #bcfffd;
+    cursor: pointer;
+}
