@@ -23,11 +23,11 @@ include './elements/header.php';
             <div id="chat_new_message_div">
                 <form method="post">
                     <input type="text" required>
-                    <button type="submit">Envoyer</button>
+                    <button type="submit">Send</button>
                 </form>
             </div>
             <div id="chat_leave_div">
-                <button>Quitter</button>
+                <button>Leave</button>
             </div>
         </div>
     </div>

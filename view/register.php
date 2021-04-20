@@ -10,8 +10,6 @@
             echo "<div id='error_problem'>Password (et/ou) username incorrect!</div>";
         } else if ($_GET['error'] === '2') {
             echo '<div id="error_problem">Un problème est survenu!</div>';
-        } else if ($_GET['error'] === '3') {
-            echo '<div id="error_problem">Account validate!</div>';
         }
     }
 
@@ -20,16 +18,16 @@
     <div id="login_div">
         <div id="welcome_div">
             <h2>Welcome</h2>
-            to your private chat
+            to your registration
         </div>
-        <form id="index_login" method="post" action="../login.php?error=0">
+        <form id="register_new" method="post" action="../new_register.php?error=0">
             <div id="username_password_div">
                 <input type="text" name="username" placeholder="username" required maxlength="45">
                 <input type="password" name="password" placeholder="password" required maxlength="45">
             </div>
             <div id="login_button_div">
-                <button id="register" onclick="document.location.href='register.php'">Register</button>
-                <button type="submit">Log in!</button>
+                <button type="submit">Register!</button>
+                <button id="back" onclick="document.location.href='index.php'">Back</button>
             </div>
         </form>
 

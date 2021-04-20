@@ -30,3 +30,5 @@ if(isset($_GET['error'], $_POST['username'], $_POST['password']) && $_GET['error
 
     checkPassword($username, $password);
 }
+
+//password_hash($password, PASSWORD_BCRYPT);

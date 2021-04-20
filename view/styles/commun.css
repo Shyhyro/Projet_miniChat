@@ -133,9 +133,15 @@ body, .message_username {
     width: 100%;
 }
 
-
 /* Hover */
 #login_button_div button:hover, #chat_new_message_leave button:hover {
     background-color: #bcfffd;
     cursor: pointer;
+}
+
+/* ERROR */
+#error_problem {
+    position: absolute;
+    height: 4rem;
+    text-align: center;
 }

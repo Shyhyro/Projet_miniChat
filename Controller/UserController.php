@@ -17,14 +17,26 @@ class UserController
      */
     public function logUser($username): object
     {
-        try {
-            $stmt = DB::getInstance()->prepare("SELECT * FROM minichat.user  WHERE username = '$username' LIMIT 1", User::class);
-            $stmt->execute();
-
-        } catch (PDOException $e) {
-            echo $e->getMessage();
+        $user = null;
+        $stmt = DB::getInstance()->prepare("SELECT * FROM minichat.user  WHERE username = '$username' LIMIT 1");
+        if($stmt->execute()) {
+            $userData = $stmt->fetch();
+            $user = new User($userData['id'], $userData['username'], $userData['password']);
         }
-        return $username;
+        return $user;
     }
 
-} 
+    public function getMessage(): array {
+        $array = [];
+        $stmt = DB::getInstance()->prepare("SELECT * FROM minichat.message");
+
+        if($stmt->execute()) {
+            foreach ($stmt->fetchAll() as $message) {
+                $array[] = new Message($message['id'], $message[''] );
+            }
+        }
+        return $array;
+    }
+}
+
+// [objet, objet, objet]
