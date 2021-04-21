@@ -3,30 +3,18 @@
 
     if (isset($_SESSION['username'])) {
 
+        $messages = new MessageController();
+        $messages = $messages->getMessage();
+
 ?>
 
     <div id="chat_body">
-        <div id="chat_message_list">
-            <div class="message_info_div">
-                <div class="message_username">Username</div>
-                <div class="message_date_div">
-                    <div>01.01.21 / 00:00</div>
-                    <div class="message_div">message txt</div>
-                </div>
-            </div>
-            <div class="message_info_div">
-                <div class="message_username">Username</div>
-                <div class="message_date_div">
-                    <div>01.01.21 / 00:00</div>
-                    <div class="message_div">message txt</div>
-                </div>
-            </div>
-        </div>
+        <div id="chat_message_list"></div>
         <div id="chat_new_message_leave">
             <div id="chat_new_message_div">
-                <form method="post">
-                    <input type="text" required>
-                    <button type="submit">Send</button>
+                <form>
+                    <input type="text" required name="message" minlength="1" id="new_message_input">
+                    <button id="new_message_button">Send</button>
                 </form>
             </div>
             <div id="chat_leave_div">
@@ -37,6 +25,8 @@
 
 <?php
     }
-
-include './elements/footer.php';
+    ?>
+<script src="./scripts/ajax.js"></script>
+<?php
+    include './elements/footer.php';
 ?>

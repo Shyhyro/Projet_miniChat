@@ -18,9 +18,9 @@ class MessageController
         return $array;
     }
 
-    public function addMessage($username, $message) :bool
+    public function addMessage($user_id, $message) :bool
     {
-        $stmt = DB::getInstance()->prepare("INSERT INTO minichat.message (user_id, message) VALUES ('$username', '$message')");
+        $stmt = DB::getInstance()->prepare("INSERT INTO minichat.message (user_id, message) VALUES ('$user_id', '$message')");
         return $stmt->execute();
     }
 
