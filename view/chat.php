@@ -1,5 +1,8 @@
 <?php
-include './elements/header.php';
+    include './elements/header.php';
+
+    if (isset($_SESSION['username'])) {
+
 ?>
 
     <div id="chat_body">
@@ -33,5 +36,7 @@ include './elements/header.php';
     </div>
 
 <?php
+    }
+
 include './elements/footer.php';
 ?>

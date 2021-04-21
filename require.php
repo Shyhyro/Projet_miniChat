@@ -8,7 +8,9 @@ $rootHtml = str_replace("//", "/", $rootHtml);
 
 require_once $root . "/Classes/DB.php";
 require_once $root . "/Controller/UserController.php";
+require_once $root . "/Controller/MessageController.php";
 require_once $root . "/Entity/User.php";
+require_once $root . "/Entity/Message.php";
 
 
 
