@@ -7,7 +7,7 @@
 
     if (isset($_GET['error'])) {
         if ($_GET['error'] === '1') {
-            echo "<div id='error_problem'>Password (et/ou) username incorrect!</div>";
+            echo "<div id='error_problem'>Username incorrect!</div>";
         } else if ($_GET['error'] === '2') {
             echo '<div id="error_problem">Un problème est survenu!</div>';
         }

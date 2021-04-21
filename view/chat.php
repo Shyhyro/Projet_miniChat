@@ -27,7 +27,7 @@ include './elements/header.php';
                 </form>
             </div>
             <div id="chat_leave_div">
-                <button>Leave</button>
+                <a href="<?=$rootHtml?>/logout.php"><button>Leave</button></a>
             </div>
         </div>
     </div>

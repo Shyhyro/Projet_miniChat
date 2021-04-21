@@ -5,18 +5,21 @@ if(isset($_GET['error'], $_POST['username'], $_POST['password']) && $_GET['error
     $username = strip_tags(trim($_POST['username']));
     $password = strip_tags(trim($_POST['password']));
 
-    DB::getInstance();
+    $user = new UserController();
+    $user = $user->logUser($username);
 
-    $new_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-
-    $n_user = "INSERT INTO minichat.user (username, password) VALUES ($username, $new_password)";
-
-
-    header("location: ./view/index.php?error=3");
-
+    if($user->getId() == null) {
+        $new_password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $addUser = new UserController();
+        $addUser = $addUser->addUser($username, $new_password);
+        if ($addUser) {
+            header("location: ./view/index.php?error=3");
+        } else {
+            header("location: ./view/register.php?error=2");
+        }
+    } else {
+        header("location: ./view/register.php?error=1");
+    }
 } else {
-
     header("location: ./view/register.php?error=2");
 }
-
-//password_hash($password, PASSWORD_BCRYPT);

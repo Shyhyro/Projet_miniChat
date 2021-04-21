@@ -141,7 +141,28 @@ body, .message_username {
 
 /* ERROR */
 #error_problem {
+    top: 0;
     position: absolute;
     height: 4rem;
     text-align: center;
+}
+
+@media screen and (max-width: 1100px){
+    #login_div {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #login_div, #chat_new_message_leave button, .message_date_div, #chat_new_message_div input, #chat_new_message_div, #chat_leave_div {
+        width: 100%;
+    }
+
+    .message_info_div, #chat_new_message_leave, #chat_new_message_div {
+        flex-direction: column;
+    }
+
+    #chat_message_list {
+        height: 80%;
+    }
 }

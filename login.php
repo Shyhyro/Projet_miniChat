@@ -16,7 +16,7 @@ if(isset($_GET['error'], $_POST['username'], $_POST['password']) && $_GET['error
         if($user->logUser($username)) {
             if(password_verify($password, $user->logUser($username)->getPassword())) {
                 $_SESSION['id'] = $user->logUser($username)->getId();
-                $_SESSION['message'] = $user->logUser($username)->getMessage();
+                $_SESSION['username'] = $user->logUser($username)->getUsername();
                 header("location: ./view/chat.php");
             }
             else {

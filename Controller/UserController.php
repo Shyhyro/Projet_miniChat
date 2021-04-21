@@ -2,29 +2,33 @@
 
 class UserController
 {
-    /**
-     * Return result of data of user table
-     * @return array
-     */
-    public function getUser(): array {
-        return ObjectController::get("SELECT * FROM minichat.user", User::class);
-    }
 
     /**
      * Search a User in table user
      * @param $username
-     * @return object
+     * @return User
      */
-    public function logUser($username): object
+    public function logUser($username): ?User
     {
-        $user = null;
         $stmt = DB::getInstance()->prepare("SELECT * FROM minichat.user  WHERE username = '$username' LIMIT 1");
-        if($stmt->execute()) {
+        $state = $stmt->execute();
+        if($state) {
             $userData = $stmt->fetch();
             $user = new User($userData['id'], $userData['username'], $userData['password']);
         }
+        else {
+            $user = null;
+        }
         return $user;
     }
+
+    public function addUser($username, $password) :bool
+    {
+        $stmt = DB::getInstance()->prepare("INSERT INTO minichat.user (username, password) VALUES ('$username', '$password')");
+        return $stmt->execute();
+    }
+
+
 
     public function getMessage(): array {
         $array = [];
