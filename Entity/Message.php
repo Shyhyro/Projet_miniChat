@@ -21,21 +21,25 @@ class Message
         $this->date = $date;
     }
 
+    /* Get id of message */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /* Get id of user */
     public function getUser_id(): ?string
     {
         return $this->user_id->getUsername();
     }
 
+    /* Get content of message */
     public function getMessage(): ?string
     {
         return $this->message;
     }
 
+    /* Get send date of message */
     public function getDate(): ?string
     {
         return $this->date;

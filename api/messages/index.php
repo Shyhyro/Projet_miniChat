@@ -21,6 +21,7 @@ switch($requestType) {
         break;
 }
 
+/* Get message */
 function getMessage($manager) {
     $reponse = [];
 

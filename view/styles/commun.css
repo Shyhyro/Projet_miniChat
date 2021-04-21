@@ -93,6 +93,9 @@ body, .message_username {
 
 #chat_message_list {
     height: 90%;
+    overflow: auto;
+    padding-right: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 #chat_body {

@@ -41,6 +41,9 @@ class UserController
         return $user;
     }
 
+    /*
+     * Add a new user in table user
+     */
     public function addUser($username, $password) :bool
     {
         $stmt = DB::getInstance()->prepare("INSERT INTO minichat.user (username, password) VALUES ('$username', '$password')");

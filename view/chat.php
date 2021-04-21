@@ -23,10 +23,9 @@
         </div>
     </div>
 
-<?php
-    }
-    ?>
+
 <script src="./scripts/ajax.js"></script>
 <?php
+}
     include './elements/footer.php';
 ?>

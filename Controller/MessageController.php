@@ -4,6 +4,9 @@
 class MessageController
 {
 
+    /*
+     * Get all messages in DB
+     */
     public function getMessage(): array {
         $array = [];
         $stmt = DB::getInstance()->prepare("SELECT * FROM minichat.message");
@@ -18,6 +21,9 @@ class MessageController
         return $array;
     }
 
+    /*
+     * Add a new message in DB
+     */
     public function addMessage($user_id, $message) :bool
     {
         $stmt = DB::getInstance()->prepare("INSERT INTO minichat.message (user_id, message) VALUES ('$user_id', '$message')");
