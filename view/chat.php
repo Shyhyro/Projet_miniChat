@@ -18,7 +18,7 @@
                 </form>
             </div>
             <div id="chat_leave_div">
-                <a href="<?=$rootHtml?>/logout.php"><button>Leave</button></a>
+                <a href="../logout.php"><button>Leave</button></a>
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@ class MessageController
      */
     public function getMessage(): array {
         $array = [];
-        $stmt = DB::getInstance()->prepare("SELECT * FROM minichat.message");
+        $stmt = DB::getInstance()->prepare("SELECT * FROM message");
 
         if($stmt->execute()) {
             foreach ($stmt->fetchAll() as $message) {
@@ -26,7 +26,7 @@ class MessageController
      */
     public function addMessage($user_id, $message) :bool
     {
-        $stmt = DB::getInstance()->prepare("INSERT INTO minichat.message (user_id, message) VALUES ('$user_id', '$message')");
+        $stmt = DB::getInstance()->prepare("INSERT INTO message (user_id, message) VALUES ('$user_id', '$message')");
         return $stmt->execute();
     }
 

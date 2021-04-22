@@ -10,7 +10,7 @@ class UserController
      */
     public function logUser($username): ?User
     {
-        $stmt = DB::getInstance()->prepare("SELECT * FROM minichat.user  WHERE username = '$username' LIMIT 1");
+        $stmt = DB::getInstance()->prepare("SELECT * FROM user  WHERE username = '$username' LIMIT 1");
         $state = $stmt->execute();
         if($state) {
             $userData = $stmt->fetch();
@@ -29,7 +29,7 @@ class UserController
      */
     public function searchUser($id): ?User
     {
-        $stmt = DB::getInstance()->prepare("SELECT * FROM minichat.user  WHERE id = '$id' LIMIT 1");
+        $stmt = DB::getInstance()->prepare("SELECT * FROM user  WHERE id = '$id' LIMIT 1");
         $state = $stmt->execute();
         if($state) {
             $userData = $stmt->fetch();
@@ -46,7 +46,7 @@ class UserController
      */
     public function addUser($username, $password) :bool
     {
-        $stmt = DB::getInstance()->prepare("INSERT INTO minichat.user (username, password) VALUES ('$username', '$password')");
+        $stmt = DB::getInstance()->prepare("INSERT INTO user (username, password) VALUES ('$username', '$password')");
         return $stmt->execute();
     }
 
