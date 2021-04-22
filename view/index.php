@@ -7,11 +7,11 @@
 
     if (isset($_GET['error'])) {
         if ($_GET['error'] === '1') {
-            echo "<div id='error_problem'>Password (et/ou) username incorrect!</div>";
+            echo "<div id='error_problem' class='orange'>Password (et/ou) username incorrect!</div>";
         } else if ($_GET['error'] === '2') {
-            echo '<div id="error_problem">Un problème est survenu!</div>';
+            echo '<div id="error_problem" class="red">Un problème est survenu!</div>';
         } else if ($_GET['error'] === '3') {
-            echo '<div id="error_problem">Account validate!</div>';
+            echo '<div id="error_problem" class="green">Account validate!</div>';
         }
     }
 

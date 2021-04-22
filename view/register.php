@@ -7,9 +7,12 @@
 
     if (isset($_GET['error'])) {
         if ($_GET['error'] === '1') {
-            echo "<div id='error_problem'>Username incorrect!</div>";
+            echo "<div id='error_problem' class='orange'>Username incorrect!</div>";
         } else if ($_GET['error'] === '2') {
-            echo '<div id="error_problem">Un problème est survenu!</div>';
+            echo '<div id="error_problem" class="red">Un problème est survenu!</div>';
+        } else if ($_GET['error'] === '4') {
+            echo '<div id="error_problem" class="orange">Password should be at least 8 characters in length and should include at least one upper case letter, 
+                    one number, and one special character.</div>';
         }
     }
 
